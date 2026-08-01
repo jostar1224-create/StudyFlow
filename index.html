@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Productivity Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@
       <p id="digital-clock"></p>
        <nav class = "nav-bar">
           <ul>
-            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#add-task">Tasks</a></li>
-            <li><a href="#">Statistics</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#about">About</a></li>
            </ul>
        </nav>
      </header>
@@ -104,7 +104,7 @@
               <option value="due-date">Due Date (Soonest)</option>
                 <option value="priority">Priority (High to Low)</option>
                </select>
-        <section class="statistics">
+        <section id="statistics" class="statistics">
           <div class="stats-grid">
              <div class="stat-card">
               <p class="stat-label">Total Tasks</p>
@@ -143,7 +143,10 @@
                 </div> -->
             </div>
         </section>
-
+           <section class="about" id="about">
+                  <h2>About StudyFlow</h2>
+         <p>StudyFlow is a student productivity dashboard built to help you organise tasks, track deadlines, and stay on top of your study goals — all in one clean, simple place.</p>
+          </section>
         <footer class="site-footer">
             <p>StudyFlow</p>
              <p>&copy; 2026 StudyFlow by Jostar. All rights reserved.</p>
@@ -152,6 +155,6 @@
        </main>
 
 
-     <script src="/js/script.js"></script>
+     <script src="js/script.js"></script>
 </body>
 </html>
