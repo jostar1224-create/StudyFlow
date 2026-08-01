@@ -450,6 +450,19 @@ body.dark-mode {
     width: 100%;
     justify-content: flex-end;
   }
+
+  .filter-toolbar {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .add-task, .about {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -458,10 +471,20 @@ body.dark-mode {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
-  .add-task {
-    padding: 1.2rem;
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .task-info {
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* prevents auto-zoom on iOS when tapping inputs */
   }
 }
