@@ -293,7 +293,7 @@ async function fetchQuote() {
 
     quoteTextEl.textContent = `"${data.quote}" — ${data.author}`;
   } catch (error) {
-    quoteTextEl.textContent = 'Stay focused. You are doing great.';
+    quoteTextEl.textContent = 'Stay focused. You are doing great, and you can achieve more.';
     console.error('Failed to fetch quote:', error);
   } finally {
     quoteSpinnerEl.style.display = 'none';
@@ -345,12 +345,21 @@ function checkDueDates() {
   if (dueSoonTasks.length > 0) {
     notificationBannerEl.textContent = `⚠️ You have ${dueSoonTasks.length} task(s) due today or overdue!`;
     notificationBannerEl.style.display = 'block';
-  } else {
+  }
+   if (Notification.permission === 'granted') {
+    new Notification('StudyFlow Reminder', {
+      body: `You have ${dueSoonTasks.length} task(s) due today or overdue!`,
+      icon: '🔔'
+    });
+  }
+   else {
     notificationBannerEl.style.display = 'none';
   }
 }
 
-
+if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+  Notification.requestPermission();
+}
 
 
 
