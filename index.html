@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     
+     
+</head>
+<body>
+     <header class="site-header"><span class="logo">StudyFlow⭐✨</span>
+      <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+      <p id="digital-clock"></p>
+       <nav class = "nav-bar">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#add-task">Tasks</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">About</a></li>
+           </ul>
+       </nav>
+     </header>
+
+       <main>
+        <section class="hero">
+          <div id="notification-banner" class="notification-banner" style="display: none;"></div>
+            <h1 class="hero-title">Organise Your Study Life</h1>
+            <p class="hero-text">Organize your tasks, meet deadlines, and stay productive everyday.</p>
+            <a href="#add-task"><button class="hero-btn">Get Started</button></a>
+            <p id="quote-text">Loading your motivational quote...</p>
+            <div id="quote-spinner" class="spinner"></div>
+            <p id="quote-text"></p>
+        </section>
+     
+
+        <section class="add-task" id ="add-task">
+            <h2>Add New Task</h2>
+            <form class="task-form">
+                <div class="form-group">
+                    <label for="task-name">Task Name:</label>
+                    <input  type="text" id="task-name" name="taskName" placeholder="Enter a task" required>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="task-description">Task Description:</label>
+                    <textarea id="task-description" name="taskDescription" placeholder="Enter a description" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-priority">Task Priority:</label>
+                    <select id="task-priority" name="taskPriority" required>
+                        <option value="">Select priority</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-due-date">Due Date</label>
+                    <input type="date" id="task-due-date" name="taskDueDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-category">Task Category:</label>
+                    <select id="task-category" name="taskCategory" required>
+                        <option value="">Select category</option>
+                        <option value="homework">Homework</option>
+                        <option value="project">Project</option>
+                        <option value="exam">Exam</option>
+                        <option value="reading">Reading</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+               <button type="submit" class="add-task-btn">Add Task</button>
+            <button type="button" id="cancel-edit-btn" class="cancel-btn" style="display: none;">Cancel</button>
+
+            </form>
+        </section>
+
+        <section class="search-section">
+            <input type="text"  id="search-input"  class="search-input" placeholder="Search tasks..." >
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-buttons">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="high-priority">High Priority</button>
+
+
+            </div>
+
+        </section>
+        <select id="sort-select" class="sort-select">
+               <option value="default">Sort by...</option>
+              <option value="due-date">Due Date (Soonest)</option>
+                <option value="priority">Priority (High to Low)</option>
+               </select>
+        <section class="statistics">
+          <div class="stats-grid">
+             <div class="stat-card">
+              <p class="stat-label">Total Tasks</p>
+              <p class="stat-value" id="total-tasks">0</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-label">Completed</p>
+              <p class="stat-value" id="completed-tasks">0</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-label">Pending</p>
+              <p class="stat-value" id="pending-tasks">0</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-label">Completion Rate</p>
+              <p class="stat-value" id="completion-rate">0%</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="task-list-section">
+             <h2>Your Tasks</h2>
+              <div class="task-list" id="task-list">
+
+                <!-- <div class="task-card">
+                  <input type="checkbox" class="task-checkbox">
+                  <div class="task-info">
+                    <h3 class="task-name">Finish Chapter 5 Notes</h3>
+                    <span class="task-priority priority-high">High</span>
+                    <span class="task-due-date">Due: 2026-08-02</span>
+                  </div>
+                  <div class="task-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                  </div>
+                </div> -->
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>StudyFlow</p>
+             <p>&copy; 2026 StudyFlow by Jostar. All rights reserved.</p>
+              <p>Built with HTML, CSS &amp; JavaScript</p>
+        </footer>
+       </main>
+
+
+     <script src="/js/script.js"></script>
+</body>
+</html>
